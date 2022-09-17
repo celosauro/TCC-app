@@ -40,7 +40,7 @@
                                       name="description" placeholder="Body">{{ $news->description }}</textarea>
                         </div>
 
-                         <div class="mt-4">
+                        <div class="mt-4">
                             <label class="block text-sm font-bold text-gray-700" for="title">Criado em:</label>
                             <input
                                 value="{{ \Carbon\Carbon::parse($news->created_at)->format('d/m/Y H:m:i')}}"
