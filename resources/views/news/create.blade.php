@@ -39,23 +39,24 @@
                         @csrf
 
                         <div>
-                            <label class="block text-sm font-bold text-gray-700" for="title">Title</label>
+                            <label class="block text-sm font-bold text-gray-700" for="title">Título:</label>
                             <input type="text" name="title"
                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                    placeholder="Title">
                         </div>
 
                         <div class="mt-4">
-                            <label class="block text-sm font-bold text-gray-700" for="title">Description:</label>
+                            <label class="block text-sm font-bold text-gray-700" for="title">Descrição:</label>
                             <textarea
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 name="description" placeholder="Description"></textarea>
                         </div>
 
                         <div class="flex items-center justify-end mt-4 gap-x-2">
-                            <button type="submit"
-                                    class="px-6 py-2 text-sm font-semibold rounded-md shadow-md text-green-100 bg-green-500 hover:bg-green-700 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300">
-                                Submit
+                            <button
+                                type="submit"
+                                class="px-6 py-2 text-sm font-semibold rounded-md shadow-md text-green-100 bg-green-500 hover:bg-green-700 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300">
+                                Criar
                             </button>
                         </div>
 

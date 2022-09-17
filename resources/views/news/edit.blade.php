@@ -41,14 +41,14 @@
                         @method('PUT')
 
                         <div>
-                            <label class="block text-sm font-bold text-gray-700" for="title">Title:</label>
+                            <label class="block text-sm font-bold text-gray-700" for="title">Título:</label>
                             <input type="text" name="title" value="{{ $news->title }}"
                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                    placeholder="Title">
                         </div>
 
                         <div class="mt-4">
-                            <label class="block text-sm font-bold text-gray-700" for="title">Description:</label>
+                            <label class="block text-sm font-bold text-gray-700" for="title">Descrição:</label>
                             <textarea
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 name="description" placeholder="Body">{{ $news->description }}</textarea>
