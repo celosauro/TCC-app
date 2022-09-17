@@ -1,5 +1,7 @@
 @extends('dashboard')
 
+@section('title') {{'Comunicados - Editar'}} @endsection
+
 @section('content')
 
 <div class="max-w-4xl mx-auto mt-8">

@@ -1,5 +1,7 @@
 @extends('dashboard')
 
+@section('title') {{'Comunicados'}} @endsection
+
 @section('content')
 <div class="flex flex-col">
 
