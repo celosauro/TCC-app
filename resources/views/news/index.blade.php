@@ -12,6 +12,16 @@
     </div>
     @endif
 
+    @if (empty(count($news)))
+  <div class="flex">
+    <div>
+      <p class="font-bold">Nenhum registro encontrado</p>
+      <p class="text-sm">Crie um novo comunicado</p>
+    </div>
+  </div>
+</div>
+    @endif
+
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <tbody>
         @foreach ($news as $new)
@@ -66,9 +76,9 @@
         </tbody>
     </table>
 
-    <div class="flex justify-end mt-10 pt-3 pb-3 pr-3">
+    <div class="flex justify-end mt-10 pb-3 pr-3 pt-3 text-gray-500">
         <a href="{{ route('news.create') }}"
-           class="pt-5 px-6 py-2 text-sm font-semibold rounded-md shadow-md text-green-100 bg-green-500 hover:bg-green-700 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300">
+           class="pt-2 px-6 py-2 text-sm font-semibold rounded-md shadow-md hover:bg-gray-100 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                  stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"

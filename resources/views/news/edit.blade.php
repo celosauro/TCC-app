@@ -8,7 +8,7 @@
 
     <div class="mb-4">
         <div class="flex justify-end mt-5">
-            <a class="px-2 py-1 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600" href="{{ route('news.index') }}">
+            <a class="px-2 py-1 rounded-md bg-gray-100 text-gray-500 hover:bg-gray-900" href="{{ route('news.index') }}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"/>
@@ -56,7 +56,7 @@
 
                         <div class="flex items-center justify-end mt-4 gap-x-2">
                             <button type="submit"
-                                    class="px-6 py-2 text-sm font-semibold rounded-md shadow-md text-green-100 bg-green-500 hover:bg-green-600 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300">
+                                    class="px-6 py-2 text-sm font-semibold rounded-md shadow-md text-gray-100 bg-gray-500 hover:bg-gray-100 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300">
                                 Submit
                             </button>
                         </div>
