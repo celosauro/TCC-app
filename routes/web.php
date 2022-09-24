@@ -13,6 +13,7 @@ use App\Http\Controllers\NewsController;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,5 +23,18 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('news', NewsController::class);
+*/
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    });
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
+
+    Route::resource('news', NewsController::class);
+});
 
 require __DIR__.'/auth.php';
