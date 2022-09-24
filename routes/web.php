@@ -13,26 +13,14 @@ use App\Http\Controllers\NewsController;
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::resource('news', NewsController::class);
-*/
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
         return view('dashboard');
-    });
+    })->name('home');
 
     Route::get('/dashboard', function () {
         return view('dashboard');
-    });
+    })->name('dashboard');
 
     Route::resource('news', NewsController::class);
 });
