@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class NewsController extends Controller
 {
@@ -51,7 +50,7 @@ class NewsController extends Controller
 
         $news->save();
 
-        return redirect('/news')->with('success', 'News saved.');
+        return redirect('/news')->with('success', 'Comunicado salvo com sucesso!');
     }
 
     /**
@@ -94,7 +93,7 @@ class NewsController extends Controller
         $news->description = $request->get('description');
         $news->save();
 
-        return redirect('/news')->with('success', 'News updated.');
+        return redirect('/news')->with('success', 'Comunicado alterado com sucesso!');
     }
 
     /**
@@ -107,6 +106,6 @@ class NewsController extends Controller
     {
         $news->delete();
 
-        return redirect('/news')->with('success', 'News deleted.');
+        return redirect('/news')->with('success', 'Comunicado excluído com sucesso!');
     }
 }
