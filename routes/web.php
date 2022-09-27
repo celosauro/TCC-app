@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActivitiesController;
 use App\Http\Controllers\NewsController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,8 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::resource('news', NewsController::class);
+
+    Route::resource('activities', ActivitiesController::class);
 });
 
 require __DIR__.'/auth.php';
