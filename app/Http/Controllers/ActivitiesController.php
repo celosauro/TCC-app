@@ -15,7 +15,9 @@ class ActivitiesController extends Controller
     public function index()
     {
 
-        $activities = Activities::all();
+        $activities = Activities::all()->sortBy(function($activity) {
+            return $activity->when;
+        });
 
         return view('activities.index', compact('activities'));
     }

@@ -32,6 +32,10 @@
                 <p>
                     {{ $activity->description }}
                 </p>
+
+                <p>
+                    {{ \Carbon\Carbon::parse($activity->when)->format('d/m/Y')}}
+                </p>
             </th>
 
             <td class="inline-grid justify-end">

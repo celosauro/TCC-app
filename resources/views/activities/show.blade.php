@@ -43,7 +43,7 @@
                         <div class="mt-4">
                             <label class="block text-sm font-bold text-gray-700" for="title">Quando:</label>
                             <input
-                                value="{{ \Carbon\Carbon::parse($activities->when)->format('d/m/Y H:m:i')}}"
+                                value="{{ \Carbon\Carbon::parse($activities->when)->format('Y-m-d')}}"
                                 disabled="disabled"
                                 readonly
                                 type="date"
@@ -55,7 +55,7 @@
                         <div class="mt-4">
                             <label class="block text-sm font-bold text-gray-700" for="title">Criado em:</label>
                             <input
-                                value="{{ \Carbon\Carbon::parse($activities->created_at)->format('d/m/Y H:m:i')}}"
+                                value="{{ \Carbon\Carbon::parse($activities->created_at)->format('Y-m-d')}}"
                                 disabled="disabled"
                                 readonly
                                 type="date"

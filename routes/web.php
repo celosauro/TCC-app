@@ -26,7 +26,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('news', NewsController::class);
 
-    Route::resource('activities', ActivitiesController::class);
+    Route::resource('activities', ActivitiesController::class)
+        ->parameters(['activities' => 'activities']);
 });
 
 require __DIR__.'/auth.php';

@@ -44,7 +44,7 @@
                             <label class="block text-sm font-bold text-gray-700" for="title">Título:</label>
                             <input type="text" name="title" value="{{ $activities->title }}"
                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                   placeholder="Title">
+                                   placeholder="Title" />
                         </div>
 
                         <div class="mt-4">
@@ -57,13 +57,11 @@
                         <div class="mt-4">
                             <label class="block text-sm font-bold text-gray-700" for="title">Quando:</label>
                             <input
-                                value="{{ \Carbon\Carbon::parse($activities->when)->format('d/m/Y H:m:i')}}"
-                                disabled="disabled"
-                                readonly
+                                value="{{ \Carbon\Carbon::parse($activities->when)->format('Y-m-d') }}"
                                 type="date"
                                 name="when"
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                placeholder="When">
+                                placeholder="When"/>
                         </div>
 
                         <div class="flex items-center justify-end mt-4 gap-x-2">
