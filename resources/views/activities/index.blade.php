@@ -27,14 +27,13 @@
         @foreach ($activities as $activity)
         <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
             <th scope="row" class="py-4 px-6 font-medium text-gray-900 dark:text-white">
-                <p><b>{{ $activity->title }}</b></p>
+                <p class="text-xs">
+                    {{ \Carbon\Carbon::parse($activity->when)->format('d/m/Y')}}
+                </p>
+                <p class="font-bold">{{ $activity->title }}</p>
 
                 <p>
                     {{ $activity->description }}
-                </p>
-
-                <p>
-                    {{ \Carbon\Carbon::parse($activity->when)->format('d/m/Y')}}
                 </p>
             </th>
 
