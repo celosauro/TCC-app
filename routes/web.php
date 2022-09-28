@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActivitiesController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,18 +17,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    })->name('home');
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
     Route::resource('news', NewsController::class);
 
     Route::resource('activities', ActivitiesController::class)
         ->parameters(['activities' => 'activities']);
+
 });
 
 require __DIR__.'/auth.php';
