@@ -38,18 +38,19 @@ class NewsTest extends TestCase
         ]);
     }
 
-    public function test_delete_news(): void
+    public function test_update_news(): void
     {
         $user = User::factory()->make();
 
         $news = News::factory()->create();
+        $newsUpdated = News::factory()->make();
 
         $this->actingAs($user)
-            ->delete(sprintf('/news/%s', $news->id));
+            ->put(sprintf('/news/%s', $news->id), $newsUpdated->toArray());
 
-        $this->assertDatabaseMissing('news', [
-            'title' => $news->title,
-            'description' => $news->description,
+        $this->assertDatabaseHas('news', [
+            'title' => $newsUpdated->title,
+            'description' => $newsUpdated->description
         ]);
     }
 
@@ -66,5 +67,36 @@ class NewsTest extends TestCase
             ->post('/news', $news->toArray())
             ->assertSessionHasErrors('title')
             ->assertSessionHasErrors('description');
+    }
+
+    public function test_validate_update_news(): void
+    {
+        $user = User::factory()->make();
+
+        $news = News::factory()->create();
+        $newsUpdated = News::factory()->make([
+            'title' => null,
+            'description' => null,
+        ]);
+
+        $this->actingAs($user)
+            ->put(sprintf('/news/%s', $news->id), $newsUpdated->toArray())
+            ->assertSessionHasErrors('title')
+            ->assertSessionHasErrors('description');
+    }
+
+    public function test_delete_news(): void
+    {
+        $user = User::factory()->make();
+
+        $news = News::factory()->create();
+
+        $this->actingAs($user)
+            ->delete(sprintf('/news/%s', $news->id));
+
+        $this->assertDatabaseMissing('news', [
+            'title' => $news->title,
+            'description' => $news->description,
+        ]);
     }
 }

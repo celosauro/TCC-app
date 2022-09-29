@@ -39,19 +39,20 @@ class ActivitiesTest extends TestCase
         ]);
     }
 
-    public function test_delete_activities(): void
+    public function test_update_activities(): void
     {
         $user = User::factory()->make();
 
         $activities = Activities::factory()->create();
+        $activitiesUpdated = Activities::factory()->make();
 
         $this->actingAs($user)
-            ->delete(sprintf('/activities/%s', $activities->id));
+            ->put(sprintf('/activities/%s', $activities->id), $activitiesUpdated->toArray());
 
-        $this->assertDatabaseMissing('activities', [
-            'title' => $activities->title,
-            'description' => $activities->description,
-            'when' => $activities->when,
+        $this->assertDatabaseHas('activities', [
+            'title' => $activitiesUpdated->title,
+            'description' => $activitiesUpdated->description,
+            'when' => $activitiesUpdated->when,
         ]);
     }
 
@@ -70,5 +71,39 @@ class ActivitiesTest extends TestCase
             ->assertSessionHasErrors('title')
             ->assertSessionHasErrors('description')
             ->assertSessionHasErrors('when');
+    }
+
+    public function test_validate_update_activities(): void
+    {
+        $user = User::factory()->make();
+
+        $activities = Activities::factory()->create();
+        $activitiesUpdated = Activities::factory()->make([
+            'title' => null,
+            'description' => null,
+            'when' => null,
+        ]);
+
+        $this->actingAs($user)
+            ->put(sprintf('/activities/%s', $activities->id), $activitiesUpdated->toArray())
+            ->assertSessionHasErrors('title')
+            ->assertSessionHasErrors('description')
+            ->assertSessionHasErrors('when');
+    }
+
+    public function test_delete_activities(): void
+    {
+        $user = User::factory()->make();
+
+        $activities = Activities::factory()->create();
+
+        $this->actingAs($user)
+            ->delete(sprintf('/activities/%s', $activities->id));
+
+        $this->assertDatabaseMissing('activities', [
+            'title' => $activities->title,
+            'description' => $activities->description,
+            'when' => $activities->when,
+        ]);
     }
 }
