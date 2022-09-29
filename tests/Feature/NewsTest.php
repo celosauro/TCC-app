@@ -25,12 +25,9 @@ class NewsTest extends TestCase
 
     public function test_create_news(): void
     {
-        $user = User::factory()->create();
+        $user = User::factory()->make();
 
-        $news = News::factory()->create([
-            'title' => fake()->sentence,
-            'description' => fake()->paragraph,
-        ]);
+        $news = News::factory()->make();
 
         $this->actingAs($user)
             ->post('/news', $news->toArray());
@@ -41,11 +38,26 @@ class NewsTest extends TestCase
         ]);
     }
 
+    public function test_delete_news(): void
+    {
+        $user = User::factory()->make();
+
+        $news = News::factory()->create();
+
+        $this->actingAs($user)
+            ->delete(sprintf('/news/%s', $news->id));
+
+        $this->assertDatabaseMissing('news', [
+            'title' => $news->title,
+            'description' => $news->description,
+        ]);
+    }
+
     public function test_validate_create_news(): void
     {
-        $user = User::factory()->create();
+        $user = User::factory()->make();
 
-        $news = News::factory()->create([
+        $news = News::factory()->make([
             'title' => '',
             'description' => '',
         ]);
@@ -55,6 +67,4 @@ class NewsTest extends TestCase
             ->assertSessionHasErrors('title')
             ->assertSessionHasErrors('description');
     }
-
-
 }

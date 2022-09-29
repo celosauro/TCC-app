@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class NewsFactory extends Factory
+class ActivitiesFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,6 +20,7 @@ class NewsFactory extends Factory
         return [
             'title' => fake()->sentence,
             'description' => fake()->sentence,
+            'when' => fake()->date('Y-m-d 00:00:00')
         ];
     }
 }
