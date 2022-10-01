@@ -67,7 +67,7 @@
                         <div class="flex items-center justify-end mt-4 gap-x-2">
                             <button type="submit"
                                     class="px-6 py-2 text-sm font-semibold rounded-md shadow-md text-gray-100 bg-gray-500 hover:bg-gray-100 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300">
-                                Submit
+                                Editar
                             </button>
                         </div>
 

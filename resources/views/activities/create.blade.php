@@ -7,9 +7,16 @@
 <div class="max-w-4xl mx-auto mt-8">
     <div class="mb-4">
         <div class="flex justify-end mt-5">
-            <a class="px-2 py-1 rounded-md bg-gray-100 text-gray-500 hover:bg-gray-900" href="{{ route('activities.index') }}">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-6 h-6">
+            <a class="px-2 py-1 rounded-md bg-gray-100 text-gray-500 hover:bg-gray-900"
+               href="{{ route('activities.index') }}">
+                <svg role="img" aria-label="Voltar"
+                     xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="currentColor"
+                     class="w-6 h-6">
+                    <title>Voltar</title>
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"/>
                 </svg>
 
@@ -42,7 +49,7 @@
                             <label class="block text-sm font-bold text-gray-700" for="title">Título:</label>
                             <input type="text" name="title"
                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                   placeholder="Title" />
+                                   placeholder="Title"/>
                         </div>
 
                         <div class="mt-4">
@@ -58,7 +65,7 @@
                                 type="date"
                                 name="when"
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                placeholder="When" />
+                                placeholder="When"/>
                         </div>
 
                         <div class="flex items-center justify-end mt-4 gap-x-2">
