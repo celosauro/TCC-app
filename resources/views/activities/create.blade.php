@@ -5,6 +5,7 @@
 @section('content')
 
 <div class="max-w-4xl mx-auto mt-8">
+
     <div class="mb-4">
         <div class="flex justify-end mt-5">
             <a class="px-2 py-1 rounded-md bg-gray-100 text-gray-500 hover:bg-gray-900"
