@@ -48,7 +48,7 @@
             "@php artisan key:generate --ansi"
         ],
         "test": [
-            "@php artisan test --coverage"
+            "@php artisan test --testdox --coverage-html=tests/coverage/"
         ]
     },
     "extra": {
